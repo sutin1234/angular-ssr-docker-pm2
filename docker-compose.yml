@@ -1,0 +1,14 @@
+version: "3"
+services:
+  ng_pm2:
+    build: ./www
+    container_name: ng_pm2
+    volumes:
+      - ./www:/var/www/html:rw
+      - /var/www/html/node_modules
+    ports:
+      - 4000:8000
+    networks:
+      - ng_network
+networks:
+  ng_network:
